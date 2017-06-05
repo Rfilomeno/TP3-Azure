@@ -8,15 +8,13 @@ namespace Tp2_Azure2.Service.Domain
 {
     public class Pedido
     {
-        public int PedidoId { get; set; }
-
-        public Guid NumeroDoPedido { get; set; }
+        public Guid PedidoId { get; set; }
 
         public virtual ICollection<Produto> Produtos { get; set; }
 
         public Pedido()
         {
-            this.NumeroDoPedido = new Guid();
+            this.PedidoId = Guid.NewGuid();
 
             this.Produtos = new List<Produto>();
         }

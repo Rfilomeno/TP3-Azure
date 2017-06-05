@@ -35,21 +35,14 @@ namespace Tp2_Azure2.Service
 
         public Guid RealizarPedido(Produto p)
         {
-            //Produto p2 = new Produto()
-            //{
-            //    ProdutoId = p.ProdutoId,
-            //    Nome = p.Nome,
-            //    Categoria = p.Categoria,
-            //    Preco = p.Preco,
-            //    Quantidade = p.Quantidade
-            //};
+            
             Pedido pedido = new Pedido();
             pedido.Produtos.Add(p);
             PedidoDao dao = new PedidoDao();
             dao.Add(pedido);
-            CloudQueueMessage message = new CloudQueueMessage(pedido.NumeroDoPedido.ToString());
+            CloudQueueMessage message = new CloudQueueMessage(pedido.PedidoId.ToString());
             queue.AddMessage(message);
-            return pedido.NumeroDoPedido;
+            return pedido.PedidoId;
 
         }
 
@@ -59,9 +52,9 @@ namespace Tp2_Azure2.Service
             pedido.Produtos = p;
             PedidoDao dao = new PedidoDao();
             dao.Add(pedido);
-            CloudQueueMessage message = new CloudQueueMessage(pedido.NumeroDoPedido.ToString());
+            CloudQueueMessage message = new CloudQueueMessage(pedido.PedidoId.ToString());
             queue.AddMessage(message);
-            return pedido.NumeroDoPedido;
+            return pedido.PedidoId;
         }
     }
 }

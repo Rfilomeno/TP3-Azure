@@ -82,13 +82,29 @@
     <Compile Include="Domain\Produto.cs" />
     <Compile Include="GerenciamentoDeCompra.cs" />
     <Compile Include="IGerenciamentoDeCompra.cs" />
+    <Compile Include="Migrations\201706050038412_InitialCreate.cs" />
+    <Compile Include="Migrations\201706050038412_InitialCreate.Designer.cs">
+      <DependentUpon>201706050038412_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706051134435_001.cs" />
+    <Compile Include="Migrations\201706051134435_001.Designer.cs">
+      <DependentUpon>201706051134435_001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201706050038412_InitialCreate.resx">
+      <DependentUpon>201706050038412_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706051134435_001.resx">
+      <DependentUpon>201706051134435_001.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="DataBase\Database.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
